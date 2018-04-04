@@ -23,12 +23,19 @@ class PageB extends React.Component {
     }
     return arr;
   }
+  names = this.listAllStudent(this.dict, this.arr)
 
   render(){
     return (
     <div>
     <h2>Student Page</h2>
-      <text>There are {this.allStudent(this.dict)} users</text>
+      <text>There are {this.allStudent(this.dict)} users</text>      
+      <br/>
+      <ul>
+        {this.names.map(function (listValue){
+          return <li>{listValue}</li>
+        })}
+      </ul>
     </div>
     )
   }
